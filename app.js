@@ -10,6 +10,7 @@ var dotenv=require('dotenv');
 const { default: mongoose } = require('mongoose');
 const { error } = require('console');
 const session = require('express-session');
+
 var app = express();
 
 dotenv.config()
@@ -25,17 +26,26 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({resave:false,saveUninitialized: true,secret:"key",cookie:{maxAge:500000}}))
+
+
 app.use('/admin', AdminRouter);
 app.use('/', usersRouter);
 
 
 
-
+mongoose.connect(process.env.MONGO_URL).then(()=>{
+  console.log("Database connected");
+  }).catch((error)=>{
+    console.log(`database connection error${error}`);
+  })
+  
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
+
 
 
 // error handler

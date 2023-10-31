@@ -13,34 +13,34 @@ router.get('/login',admincontroller.GetLogin);
 router.get('/logout',adminauth.adminauth,admincontroller.AdminLogout)
 
 
-router.get('/projects',adminpanel.GetProject);
-router.post('/addprojects', upload.single('image'), adminpanel.AddProject);
-router.post('/editprojects/:id',upload.single('image'),adminpanel.updateProject)
-router.get('/deleteprojects/:id',adminpanel.DeleteProject);
+router.get('/projects',adminauth.adminauth, adminpanel.GetProject);
+router.post('/addprojects',adminauth.adminauth, upload.single('image'), adminpanel.AddProject);
+router.post('/editprojects/:id',adminauth.adminauth,upload.single('image'),adminpanel.updateProject)
+router.get('/deleteprojects/:id',adminauth.adminauth,adminpanel.DeleteProject);
 
-router.get('/clients',adminpanel.GetClients);
-router.post('/addclients',upload.single('image'),adminpanel.AddClients);
-router.post('/editclients/:id',upload.single('image'),adminpanel.updateClient);
-router.get('/deleteclients/:id',adminpanel.DeleteClients);
+router.get('/clients',adminauth.adminauth,adminpanel.GetClients);
+router.post('/addclients',adminauth.adminauth,upload.single('image'),adminpanel.AddClients);
+router.post('/editclients/:id',adminauth.adminauth,upload.single('image'),adminpanel.updateClient);
+router.get('/deleteclients/:id',adminauth.adminauth,adminpanel.DeleteClients);
 
-router.get('/blogs',adminpanel.GetBlog);
-router.post('/addblogs',upload.single('image'),adminpanel.AddBlog);
-router.post('/editblogs/:id',upload.single('image'),adminpanel.updateBlog);
-router.get('/deleteblogs/:id',adminpanel.DeleteBlog);
+router.get('/blogs',adminauth.adminauth,adminpanel.GetBlog);
+router.post('/addblogs',adminauth.adminauth,upload.single('image'),adminpanel.AddBlog);
+router.post('/editblogs/:id',adminauth.adminauth,upload.single('image'),adminpanel.updateBlog);
+router.get('/deleteblogs/:id',adminauth.adminauth,adminpanel.DeleteBlog);
 
-router.get('/contact',adminpanel.GetContact);
+router.get('/contact',adminauth.adminauth,adminpanel.GetContact);
 router.post('/contact-form',contact.AddContact);
-router.get('/deletecontacts/:id',adminpanel.DeleteContact);
+router.get('/deletecontacts/:id',adminauth.adminauth,adminpanel.DeleteContact);
 
-router.get('/products',adminpanel.GetProducts);
-router.post('/addproducts',upload.single('image'),adminpanel.AddProducts);
-router.post('/editproducts/:id',upload.single('image'),adminpanel.updateProducts);
-router.get('/deleteproducts/:id',adminpanel.DeleteProduct);
+router.get('/products',adminauth.adminauth,adminpanel.GetProducts);
+router.post('/addproducts',adminauth.adminauth,upload.single('image'),adminpanel.AddProducts);
+router.post('/editproducts/:id',adminauth.adminauth,upload.single('image'),adminpanel.updateProducts);
+router.get('/deleteproducts/:id',adminauth.adminauth,adminpanel.DeleteProduct);
 
-router.get('/service',adminpanel.GetService);
-router.post('/addservice',upload.single('image'),adminpanel.AddService);
-router.post('/editservice/:id',upload.single('image'),adminpanel.UpdateService);
-router.get('/deleteservice/:id',adminpanel.DeleteService);
+router.get('/service',adminauth.adminauth,adminpanel.GetService);
+router.post('/addservice',adminauth.adminauth,upload.single('image'),adminpanel.AddService);
+router.post('/editservice/:id',adminauth.adminauth,upload.single('image'),adminpanel.UpdateService);
+router.get('/deleteservice/:id',adminauth.adminauth,adminpanel.DeleteService);
 
 
 

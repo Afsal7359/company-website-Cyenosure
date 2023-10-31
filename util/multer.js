@@ -1,7 +1,7 @@
 const multer = require("multer")
 const path = require('path')
 
-module.exports = multer({
+adminauth.adminauth,module.exports = multer({
 
     storage:multer.diskStorage({
         destination:(req,file,cb)=>{

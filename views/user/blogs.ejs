@@ -22,7 +22,7 @@
                       <li class="nav-item">
                           <a class="nav-link" href="/Projects">Projects</a>
                       </li>
-                      <li class="nav-item">
+                      <li class="nav-item active">
                           <a class="nav-link" href="/Blogs">Blogs</a>
                       </li>
                       <li class="nav-item">
@@ -112,7 +112,7 @@
                                Author: <%=currentdata.author%>
                                 </h6>
                                 <p><%=currentdata.description.split(' ').slice(0, 10).join(' ')%>...</p>
-                                <a href="/blogdetails/<%=currentdata._id%>" class="item-link">Read More <i class="fa fa-arrow-right"></i></a>
+                                <a href="/blogdetails/<%=currentdata._id%>" >Read More <i class="fa fa-arrow-right"></i></a>
                                 <!--post-item-description-->
                              </div>
                              <!--post-item-wrap-->

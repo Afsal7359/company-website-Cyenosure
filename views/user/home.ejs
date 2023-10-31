@@ -10,7 +10,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="/">Home</a>
                         </li>
                         <li class="nav-item">
@@ -195,7 +195,7 @@
                             <h4><%= currentdata.title %></h4>
                             <p class="text-size-16"><%=currentdata.description.split(' ').slice(0, 25).join(' ')%>....</p>
                             <div class="btn_wrapper">
-                                <a class="text-decoration-none" href="/service">Read More<i class="fa-thin fa-arrow-right-long"></i></a>
+                                <a class="text-decoration-none" href="/services">Read More<i class="fa-thin fa-arrow-right-long"></i></a>
                             </div>
                         </div>
                     </div>
@@ -286,14 +286,14 @@
             <div class="col-lg-4 col-md-4 col-sm-6 col-12">
                 <div class="portfolio_box position-relative">
                     <div class="portfolio_image_wrapper">
-                        <figure class="mb-0" style="width: 350px; height: 300px; overflow: hidden;">
+                        <figure class="mb-0 w-300" style=" height: 300px; overflow: hidden;">
                             <img src="<%= currentdata.image %>" alt="" style="width: 100%; height: 100%;">
                         </figure>
                         
                         
                         <div class="overlay bottom-overlay">
                             <div class="box_hover_effect">
-                                <a href="/detailproject/<%= currentdata._id%>" target="_blank">
+                                <a href="/detailproject/<%= currentdata._id%>" >
                                     <figure class="mb-0">
                                         <img src="/assets-u/images/portfolio_box_hover.png" alt="" class="img-fluid">
                                     </figure>
@@ -722,7 +722,7 @@
                         <div class="item">
                             <div class="staff_box text-center">
                                 <div class="image_wrapper position-relative">
-                                    <figure class="mb-0" style="width: 200px; height: 200px; overflow: hidden;">
+                                    <figure class="mb-0 w-300" style=" height: 200px; overflow: hidden;">
                                         <img src="<%= currentdata.image %>" alt="" style="width: 100%; height: 100%; object-fit: cover;">
                                     </figure>
                                     <div class="icons float-left d-table">
@@ -731,7 +731,7 @@
                                 </div>
                                 <a class="text-decoration-none">
                                     <!-- <h5 class="mb-0">Baen James</h5> -->
-                                    <p class="mb-0 text-size-16">grgrggfrgfg</p>
+                                    <p class="mb-0 text-size-16"><%= currentdata.name %></p>
                                 </a>
                             </div>
                         </div>

@@ -4,6 +4,7 @@ const clients = require('../models/clients');
 const contact = require('../models/contact');
 const products = require('../models/products');
 const projects = require('../models/projects');
+const service = require('../models/service');
 
 
 
@@ -338,7 +339,7 @@ module.exports={
                 console.log("products updated successfully.");
                 res.redirect('/admin/products');
             } else {
-                console.log("blog not found or not updated.");
+                console.log("products not found or not updated.");
                 res.redirect('/admin/products');
             }
         } catch (err) {
@@ -352,6 +353,86 @@ DeleteProduct:async(req,res)=>{
         await products.findByIdAndDelete({_id:id});
         console.log(' Products Deleted Sucessfully');
         res.redirect('/admin/products')
+    }catch(err){
+        console.log(err)
+    }
+},
+
+GetService:async(req,res)=>{
+    try{
+        const data = await service.find()
+        res.render('admin/service',{ layout:"adminlayout", data})
+    }catch(err){
+        console.log(err);
+    }
+},
+AddService: async (req, res) => {
+    try {
+        if (req.file) {
+          const { title,description } = req.body;
+          const imageurl = `/image/${req.file.filename}`;
+    
+          await service.create({ title,description, image: imageurl });
+        } else {
+          console.log("No file uploaded.");
+        }
+    
+        console.log("service Added ...");
+        res.redirect('/admin/service');
+      } catch (err) {
+        console.log(err);
+      }
+    },
+
+  UpdateService: async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { title,description } = req.body;
+
+        let imageurl = null;
+
+        if (req.file) {
+            imageurl = `/image/${req.file.filename}`;
+        }
+
+        const updatedFields = {};
+
+       
+        if (title) {
+            updatedFields.title = title;
+        }
+        if (description) {
+            updatedFields.description = description;
+        }
+
+        if (imageurl) {
+            updatedFields.image = imageurl;
+        }
+
+        const updatedservice = await service.findOneAndUpdate(
+            { _id: id },
+            { $set: updatedFields },
+            { new: true }
+        );
+
+        if (updatedservice) {
+            console.log("service updated successfully.");
+            res.redirect('/admin/service');
+        } else {
+            console.log("service not found or not updated.");
+            res.redirect('/admin/service');
+        }
+    } catch (err) {
+        console.error(err);
+    }
+},
+
+DeleteService:async(req,res)=>{
+    try{
+        const {id}=req.params;
+        await service.findByIdAndDelete({_id:id});
+        console.log(' service Deleted Sucessfully');
+        res.redirect('/admin/service')
     }catch(err){
         console.log(err)
     }

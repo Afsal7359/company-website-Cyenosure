@@ -96,123 +96,23 @@
             </div>
         </div>
         <div class="row" data-aos="fade-up">
+            <% if (servicedata) { %>
+                <% for (let i = 0; i < servicedata.length; i++) { %>
+                    <% let currentdata = servicedata[i]; %>
             <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                 <div class="box">
-                    <figure>
-                        <img src="/assets-u/images/our_services_box_1.png" alt="" class="img-fluid">
+                    <figure class="mb-0" style="width: 300px; height: 300px; overflow: hidden;">
+                        <img src="<%= currentdata.image %>" alt="" style="width: 100%; height: 100%;">
                     </figure>
-                    <h4>Web Development</h4>
-                    <p class="text-size-16">Web development is a multifaceted discipline that creates visually appealing, interactive, and functional websites and web applications. It combines creativity, technical expertise, and problem-solving skills to meet the needs of businesses, organizations, and individuals in the digital age. At Cyenosure encompasses various tasks, including web design, content creation, programming, network security, and client-server scripting. Web developers use programming languages, frameworks, and tools to create functional and visually appealing websites accessible online.</p>
-                    
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="box">
-                    <figure>
-                        <img src="/assets-u/images/our_services_box_2.png" alt="" class="img-fluid">
-                    </figure>
-                    <h4>App Development</h4>
-                    <p class="text-size-16">We create software applications that run on mobile devices such as smartphones and tablets. These applications are designed to operate on specific mobile platforms like iOS (Apple devices) and Android (various brands) and can be downloaded and installed from app stores, catering to your specific business needs. This is a dynamic and rapidly evolving field that requires a blend of creativity, technical expertise, and user-centric design principles. With the increasing demand for innovative and user-friendly mobile applications, our expert team of developers and designers is dedicated to transforming your app idea into a reality, ensuring a seamless experience for your users across various mobile platforms. Whether it’s developing games, social networking apps, e-commerce platforms, or productivity tools, at Cyenosure your Dream is our Reality.</p>
-                    
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="box">
-                    <figure>
-                        <img src="/assets-u/images/our_services_box_3.png" alt="" class="img-fluid">
-                    </figure>
-                    <h4>Software Development</h4>
-                    <p class="text-size-16">Software development is a collaborative and iterative process that requires effective communication, problem-solving skills, and attention to detail. Our developers often work in teams, following established methodologies to efficiently manage projects and deliver high-quality software products to meet your unique business requirements. Cyenosure developers are diverse, covering many applications, including web and mobile apps, desktop software, embedded systems, and enterprise solutions, helping you stay ahead in the dynamic modern digital world.</p>
-                    
-                </div>
-            </div>
-        </div>
-        <div class="row" data-aos="fade-up">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="box">
-                    <figure>
-                        <img src="/assets-u/images/our_services_box_4.png" alt="" class="img-fluid">
-                    </figure>
-                    <h4>Web Design</h4>
-                    <p class="text-size-16">Web design is creating visually appealing and user-friendly interfaces for websites. It involves a combination of graphic design, user experience (UX) design, and technical skills to produce websites that are aesthetically pleasing, functional, and easy to navigate. Web designers at Cyenosure use various tools and techniques to conceptualize and craft a website's layout, colors, fonts, and interactive elements. This ensures it delivers an engaging and seamless user experience by leaving a lasting impression on your visitors. A well-designed website captures the essence of a brand. It delivers a seamless and enjoyable experience for visitors, making it a vital component of the online presence for businesses, organizations, and individuals.</p>
-                    
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="box">
-                    <figure>
-                        <img src="/assets-u/images/our_services_box_5.png" alt="" class="img-fluid">
-                    </figure>
-                    <h4>Whatsapp Api</h4>
+                    <h4><%= currentdata.title %></h4>
                     <p class="text-size-16">
-                        WhatsApp API gives businesses a powerful tool to engage with customers, automate communications, and deliver a more personalized and efficient customer experience. By leveraging this API at Cyenosure, we enhance customer satisfaction, streamline operations, and build stronger relationships with your audience on one of the world's most popular messaging platforms. With this API, we can help your businesses automate and streamline customer communications, providing a more convenient and efficient way to engage with users.
-                        </p>
+                        <%= currentdata.description %>
+                    </p>
                     
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="box">
-                    <figure>
-                        <img src="/assets-u/images/our_services_box_5.png" alt="" class="img-fluid">
-                    </figure>
-                    <h4>Sms Integration</h4>
-                    <p class="text-size-16">SMS integration is implemented using SMS gateway APIs (Application Programming Interfaces) provided by SMS service providers. These APIs allow developers to programmatically send and receive SMS messages, integrating SMS functionality seamlessly into their applications or systems. Our team members offer SMS integration to enhance customer communication, streamline processes, and create more interactive and engaging user experiences </p>
-                    
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="box">
-                    <figure>
-                        <img src="/assets-u/images/our_services_box_5.png" alt="" class="img-fluid">
-                    </figure>
-                    <h4>Server</h4>
-                    <p class="text-size-16">Reliable and scalable server solutions. From setup to management, our team ensures optimal performance, security, and uninterrupted operations for your business needs.</p>
-                    
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="box">
-                    <figure>
-                        <img src="/assets-u/images/our_services_box_6.png" alt="" class="img-fluid">
-                    </figure>
-                    <h4>Hosting</h4>
-                    <p class="text-size-16">Power your website with reliable hosting solutions. Our hosting services offer fast loading times, robust security, and 24/7 support to ensure your online presence thrives.</p>
-                    
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="box">
-                    <figure>
-                        <img src="/assets-u/images/our_services_box_5.png" alt="" class="img-fluid">
-                    </figure>
-                    <h4>Domain</h4>
-                    <p class="text-size-16">Secure your online identity with the perfect domain. Choose from a wide selection and register your unique web address effortlessly with our domain services..</p>
-                    
-                </div>
-            </div>
-           
-        
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="box">
-                    <figure>
-                        <img src="/assets-u/images/our_services_box_5.png" alt="" class="img-fluid">
-                    </figure>
-                    <h4>office365</h4>
-                    <p class="text-size-16">Office 365 provides a comprehensive and versatile suite of tools that streamline workflow, enhance collaboration, and improve communication. Whether used by individuals, small businesses, or large enterprises, Office 365 empowers users to work more efficiently and effectively in the modern digital landscape. As a certified Microsoft partner, we offer tailored solutions by combining popular Microsoft applications like Word, Excel, PowerPoint, Outlook, and more into a unified cloud-based platform accessible from anywhere that empowers your organization with the full potential of Office 365</p>
-                    
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="box">
-                    <figure>
-                        <img src="/assets-u/images/our_services_box_5.png" alt="" class="img-fluid">
-                    </figure>
-                    <h4>G-suites</h4>
-                    <p class="text-size-16">G Suite offers a user-friendly and collaborative environment where teams can collaborate efficiently, communicate seamlessly, and access their work from anywhere. It simplifies tasks, enhances productivity, and promotes effective collaboration, making it a popular choice for businesses and organizations worldwide. At Cyenosure, we offer comprehensive G Suite services to streamline your business communication, collaboration, and productivity with various applications that help you work more effectively in real-time.</p>
-                    
-                </div>
-            </div>
-        </div>
+        <%}%>
+        <%}%>
     </div>
 </section>
 

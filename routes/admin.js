@@ -3,10 +3,14 @@ const admincontroller = require('../controller/admincontroller');
 const adminpanel = require('../controller/adminpanel');
 const upload = require('../util/multer');
 const contact = require('../controller/contact');
+const adminauth = require('../middlewears/Adminauth');
 var router = express.Router();
 
 
-router.get('/',admincontroller.Dashboard);
+router.get('/',adminauth.adminauth,admincontroller.Dashboard);
+router.post('/login',admincontroller.PostLogin);
+router.get('/login',admincontroller.GetLogin);
+router.get('/logout',adminauth.adminauth,admincontroller.AdminLogout)
 
 
 router.get('/projects',adminpanel.GetProject);
@@ -32,6 +36,11 @@ router.get('/products',adminpanel.GetProducts);
 router.post('/addproducts',upload.single('image'),adminpanel.AddProducts);
 router.post('/editproducts/:id',upload.single('image'),adminpanel.updateProducts);
 router.get('/deleteproducts/:id',adminpanel.DeleteProduct);
+
+router.get('/service',adminpanel.GetService);
+router.post('/addservice',upload.single('image'),adminpanel.AddService);
+router.post('/editservice/:id',upload.single('image'),adminpanel.UpdateService);
+router.get('/deleteservice/:id',adminpanel.DeleteService);
 
 
 

@@ -184,138 +184,23 @@
             </div>
             <div class="col-lg-9 col-md-12 col-sm-12 col-12">
                 <div class="owl-carousel owl-theme">
+                    <% if (servicedata) { %>
+                        <% for (let i = 0; i < servicedata.length; i++) { %>
+                            <% let currentdata = servicedata[i]; %>
                     <div class="item">
                         <div class="box mb-0">
-                            <figure>
-                                <img src="/assets-u/images/our_services_box_1.png" alt="" class="img-fluid">
+                            <figure class="mb-0" style="width: 300px; height: 300px; overflow: hidden;">
+                                <img src="<%= currentdata.image %>" alt="" style="width: 100%; height: 100%;">
                             </figure>
-                            <h4>WEB DEVELOPMENT</h4>
-                            <p class="text-size-16">Crafting captivating websites with code and creativity. Our web development services ensure seamless user experiences and eye-catching designs that leave a lasting impression....</p>
+                            <h4><%= currentdata.title %></h4>
+                            <p class="text-size-16"><%=currentdata.description.split(' ').slice(0, 25).join(' ')%>....</p>
                             <div class="btn_wrapper">
-                                <a class="text-decoration-none" href="/services">Read More<i class="fa-thin fa-arrow-right-long"></i></a>
+                                <a class="text-decoration-none" href="/service">Read More<i class="fa-thin fa-arrow-right-long"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="box mb-0">
-                            <figure>
-                                <img src="/assets-u/images/our_services_box_2.png" alt="" class="img-fluid">
-                            </figure>
-                            <h4>APP DEVELOPMENT</h4>
-                            <p class="text-size-16">Innovative mobile apps at your fingertips. Our skilled mobile developers bring your ideas to life, delivering user-friendly and feature-rich applications for Android and iOS platforms....</p>
-                            <div class="btn_wrapper">
-                                <a class="text-decoration-none" href="/services">Read More<i class="fa-thin fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="box mb-0">
-                            <figure>
-                                <img src="/assets-u/images/our_services_box_3.png" alt="" class="img-fluid">
-                            </figure>
-                            <h4>SOFTWARE DEVELOPMENT</h4>
-                            <p class="text-size-16">From concept to reality, our experts craft tailored solutions to boost your efficiency and streamline operations with custom-built software applications....</p>
-                            <div class="btn_wrapper">
-                                <a class="text-decoration-none" href="/services">Read More<i class="fa-thin fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="box mb-0">
-                            <figure>
-                                <img src="/assets-u/images/our_services_box_1.png" alt="" class="img-fluid">
-                            </figure>
-                            <h4>WEB DESIGN</h4>
-                            <p class="text-size-16">Elevate your online presence with stunning web design. Our experts blend creativity and functionality to deliver captivating websites that engage and impress visitors...</p>
-                            <div class="btn_wrapper">
-                                <a class="text-decoration-none" href="/services">Read More<i class="fa-thin fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="box mb-0">
-                            <figure>
-                                <img src="/assets-u/images/our_services_box_2.png" alt="" class="img-fluid">
-                            </figure>
-                            <h4>SERVER</h4>
-                            <p class="text-size-16">Reliable and scalable server solutions. From setup to management, our team ensures optimal performance, security, and uninterrupted operations for your business needs...</p>
-                            <div class="btn_wrapper">
-                                <a class="text-decoration-none" href="/services">Read More<i class="fa-thin fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="box mb-0">
-                            <figure>
-                                <img src="/assets-u/images/our_services_box_3.png" alt="" class="img-fluid">
-                            </figure>
-                            <h4>HOSTING</h4>
-                            <p class="text-size-16">Power your website with reliable hosting solutions. Our hosting services offer fast loading times, robust security, and 24/7 support to ensure your online presence thrives...</p>
-                            <div class="btn_wrapper">
-                                <a class="text-decoration-none" href="/services">Read More<i class="fa-thin fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="box mb-0">
-                            <figure>
-                                <img src="/assets-u/images/our_services_box_1.png" alt="" class="img-fluid">
-                            </figure>
-                            <h4>DOMAIN</h4>
-                            <p class="text-size-16">Secure your online identity with the perfect domain. Choose from a wide selection and register your unique web address effortlessly with our domain services...</p>
-                            <div class="btn_wrapper">
-                                <a class="text-decoration-none" href="/services">Read More<i class="fa-thin fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="box mb-0">
-                            <figure>
-                                <img src="/assets-u/images/our_services_box_2.png" alt="" class="img-fluid">
-                            </figure>
-                            <h4>SMS INTEGRATION</h4>
-                            <p class="text-size-16">Efficiently connect with your audience through SMS integration. Automate communication and reach customers wherever they are with our services...</p>
-                            <div class="btn_wrapper">
-                                <a class="text-decoration-none" href="/services">Read More<i class="fa-thin fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="box mb-0">
-                            <figure>
-                                <img src="/assets-u/images/our_services_box_3.png" alt="" class="img-fluid">
-                            </figure>
-                            <h4>WHATSAPP  API</h4>
-                            <p class="text-size-16">Utilize WhatsApp API for business communication. Automate messaging, support, and notifications, providing a direct channel to connect with your audience conveniently...</p>
-                            <div class="btn_wrapper">
-                                <a class="text-decoration-none" href="/services">Read More<i class="fa-thin fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="box mb-0">
-                            <figure>
-                                <img src="/assets-u/images/our_services_box_3.png" alt="" class="img-fluid">
-                            </figure>
-                            <h4>OFFICE 365</h4>
-                            <p class="text-size-16">Empower your business with Office 365. Harness the power of cloud-based productivity tools, enhancing collaboration and efficiency across your organization...</p>
-                            <div class="btn_wrapper">
-                                <a class="text-decoration-none" href="/services">Read More<i class="fa-thin fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="box mb-0">
-                            <figure>
-                                <img src="/assets-u/images/our_services_box_3.png" alt="" class="img-fluid">
-                            </figure>
-                            <h4>G-SUITES</h4>
-                            <p class="text-size-16">Streamline productivity with G Suite. Collaborate seamlessly using cloud-based tools for emails, documents, and team communication, enhancing efficiency across your organization...</p>
-                            <div class="btn_wrapper">
-                                <a class="text-decoration-none" href="/services">Read More<i class="fa-thin fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                   <%}%>
+                   <%}%>
                 </div>
             </div>
         </div>

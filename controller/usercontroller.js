@@ -2,15 +2,17 @@ const blogs = require("../models/blogs");
 const clients = require("../models/clients");
 const products = require("../models/products");
 const projects = require("../models/projects");
+const service = require("../models/service");
 
 
 module.exports={
 
     GetHomepage:async(req,res)=>{
         try{
+            const servicedata= await service.find()
             const projectdata= await projects.find()
             const clientdatas = await clients.find()
-            res.render('user/home', { projectdata,clientdatas });
+            res.render('user/home', { projectdata,clientdatas,servicedata });
         }catch(err){
             console.log(err);
         }
@@ -37,9 +39,9 @@ module.exports={
 
     GetServicepage:async(req,res)=>{
         try{
-           
+           const servicedata = await service.find()
             const clientdatas=await clients.find()
-            res.render('user/services' ,{clientdatas})
+            res.render('user/services' ,{clientdatas,servicedata})
             console.log(clientdatas);
         }catch(err){
             console.log(err);
@@ -92,7 +94,7 @@ module.exports={
           
             const clientdatas=await clients.find()
             
-            res.render('user/projects' ,{clientdatas})
+            res.render('user/contact' ,{clientdatas})
           
         }catch(err){
             console.log(err);

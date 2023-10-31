@@ -1,6 +1,6 @@
 const mongoose= require('mongoose')
 
-const projectsSchema = new mongoose.Schema({
+const serviceSchema = new mongoose.Schema({
   
     title:{
         type:String,
@@ -14,9 +14,10 @@ const projectsSchema = new mongoose.Schema({
     },
     image:{
         type:String,
-        required:true,
-    },
+        require:true,
+    }
+   
 });
  
-const projects=mongoose.model(' projects', projectsSchema);
-module.exports=projects;
+const service=mongoose.model(' service', serviceSchema);
+module.exports=service;

@@ -1,4 +1,5 @@
 const adminlogin = require("../models/adminlogin");
+const contact = require("../models/contact");
 
 
 
@@ -6,8 +7,8 @@ module.exports ={
 Dashboard: async (req, res) => {
     try {
         
-        
-       res.render('admin/dashboard', { layout: "adminlayout"})
+        const data = await contact.find()
+       res.render('admin/dashboard', { layout: "adminlayout",data})
        
     } catch (err) {
         console.log(err);

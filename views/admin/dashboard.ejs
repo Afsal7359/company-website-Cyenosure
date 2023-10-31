@@ -30,36 +30,14 @@
                                     <div class="card">
                                         <div class="card-header border-bottom">
                                             <h3 class="card-title"><!-- Button to toggle table visibility -->
-                                                <button id="viewcargobooking" class="btn btn-primary">View Cargo Bookings</button>
+                                               
                                                 <button id="viewenquiry" class="btn btn-primary">View Enquiries</button>
 
                                                 </h3>
                                         </div>
                                        
 
-                                            <div id="bookingTable" style="display: none;">
-                                                <div class="card-header border-bottom">
-                                                    <h3 class="card-title"> Cargo Booking Datatable</h3>
-                                                </div>
-                                            <div class="table-responsive">
-                                                <table id="editable-responsive-table" class="table editable-table table-nowrap table-bordered table-edit wp-100">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>ID</th>
-                                                            <th>From</th>
-                                                            <th>Destination</th>
-                                                            <th>N.O of Box</th>
-                                                            <th>Name</th>
-                                                            <th>Email</th>
-                                                            <th>Number</th>
-                                                            <th>Details</th>
-                                                        </tr>
-                                                    </thead>
-                                                   
-                                                </table>
-                                            </div>
-                                        </div>
-
+                                        <%if (data) { %>
                                             <div id="enquiryTable" style="display: none;">
                                                 
                                                     <div class="card-header border-bottom">
@@ -74,18 +52,49 @@
                                                                                 <th>name</th>
                                                                                 <th>email</th>
                                                                                 <th>number</th>
-                                                                                <th>subject</th>
                                                                                 <th>message</th>
-                                                                              
+                                                                                <th>Action</th>
                                                                             </tr>
                                                                         </thead>
+                                                                        <tbody>
+                                                                            <% for (let i = 0; i < data.length; i++) { %>
+                                                                                <% let currentdata = data[i]; %>
+                                                                        
+                                                                            <tr>
+                                                                               
+                                                                                    <td><%= i + 1 %></td>
+                                                                                    <td><%= currentdata.name%></td>
+                                                                                    <td><%= currentdata.email%></td>
+                                                                                    <td><%= currentdata.number%></td>
+                                                                                    <td><%= currentdata.message%></td>
+                                                                                    
+                                                                                    <td>
+                                                                                        <div class="card-body">
+                                                                                            <p class="text-muted"></p>
+                                                                                           <a  class="btn btn-danger" data-bs-target="#modaldemo3_<%=i%>" data-bs-toggle="modal">Delete </a>
+                                                                                            
+                                                                                       
+                                                                                        </div> 
+                                                                                        
+                                                                                        
+                                                                                    </td>
+                                                                             
+                                                                            </tr>
+                                                                            <% } %>
+                                                                            
+                                                                            
+                                                                          
+                                                                                   
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
                                                                         
                                                                     </table>
                                                                 </div>
                                                             </div>
                                                         </div>
                                             <!-- End Row -->
-                                       
+                                            <%}%>
 
 
 

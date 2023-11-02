@@ -1,4 +1,4 @@
-<div class="sub-banner-section-outer services-banner-section position-relative " style="width: 100%;">
+<div class="sub-banner-section-outer projects-banner-section position-relative">
     <header>
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light ml-0">
@@ -16,8 +16,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/about"  style="font-size: 20px;">About</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="/services"  style="font-size: 20px;">Services</a>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/services"  style="font-size: 20px;">Services</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/Projects"  style="font-size: 20px;">Projects</a>
@@ -63,107 +63,68 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="banner-section-content text-center">
-                        <h1 data-aos="fade-up">Our Services</h1>
-                        <p class="text-white" data-aos="fade-right"></p>
-                        
+                        <h1 data-aos="fade-up">Project Details</h1>
+                        <p class="text-white" data-aos="fade-right">.</p>
+                      
                     </div>
                 </div>
             </div>
-          
-          
+           
         </div>
     </section>
-   
-    
+  
 </div>
-<!-- SERVICES SECTION -->
-<section class="services_section" id="digital_services">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                <div class="heading position-relative text-center">
-                    <h6>What We Do</h6>
-                    <h2>We Provide World Class Digital Services</h2>
-                    <figure class="mb-0 position-absolute">
-                        <img src="/assets-u/images/red_line.png" alt="" class="img-fluid">
-                    </figure>
-                </div>
-            </div>
-        </div>
-        <div class="row" data-aos="fade-up">
-            <% if (servicedata) { %>
-                <% for (let i = 0; i < servicedata.length; i++) { %>
-                    <% let currentdata = servicedata[i]; %>
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-12">
-                        <div class="box mt-0 w-350 h-75">
-                            <img src="<%= currentdata.image %>" alt="" class="w-100 h-50">
-                            <h4><%= currentdata.title %></h4>
-                            <p class="text-size-16"><%= currentdata.description.slice(0, 90) %>....</p>
-                            <div class="btn_wrapper">
-                                <a class="text-decoration-none" href="/servicedetail/<%= currentdata._id %>">Read More<i class="fa-thin fa-arrow-right-long"></i></a>
-                            </div>
-                        </div>
+<!-- MAIN SECTION -->
+<!-- ======================================= -->
+<!-- ==========   {One Column*}   ========== -->
+<!-- ======================================= -->
+<div class="wrapper">
+    <section class="blog-posts">
+       <div class="container">
+          <div class="row wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+             <div id="blog" class="col-xl-12">
+                <% if (servicedetail) { %>
+                  
+                <div class="float-left w-100 post-item border mb-4">
+                    <div class="post-item-wrap position-relative">
+                       <div class="post-image h-50">
+                          <a href="#">
+                          <img alt="" src="<%= servicedetail.image %>">
+                          </a>
+                          
+                          <!--post-image-->
+                       </div>
+                       <div class="post-item-description">
+                          
+                    
+                        
+                          <h2>
+                             <a href="#"><%= servicedetail.title %></a>
+                          </h2>
+                          <p><%= servicedetail.description %></p>
+                          <!--post-item-description-->
+                       </div>
+                       <!--post-item-wrap-->
                     </div>
-                <% } %>
-            <% } %>
-        </div>
-        
-</section>
-
-<section class="our_staff_section">
+                    <!--post-item-->
+                 </div>
+              <%}%>
+              
+                <!--blog-->
+             </div>
+             <!--row-->
+          </div>
+       </div>
+    </section>
+ </div>
+ <section class="our_staff_section">
     <div class="container">
         <% if (editordata) {%>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                <%- editordata[3].content -%>
+                <%- editordata[5].content -%>
             </div>
         </div>
         <%}%>
-    </div>
-</section>
-
-
-<!-- CONTACT SECTION -->
-<section class="contact-section position-relative">
-    <div class="container">
-        <figure class="right_shape mb-0 position-absolute shape">
-            <img src="/assets-u/images/contact_us_right_shape.png" alt="" class="img-fluid">
-        </figure>
-        <div class="row contact_box position-relative">
-            <figure class="left_shape mb-0 position-absolute shape_2">
-                <img src="/assets-u/images/contact_us_left_shape.png" alt="" class="img-fluid">
-            </figure>
-            <div class="col-lg-6 col-md-12 col-sm-12 col-12 pr-lg-0 pr-md-0 pr-auto">
-                <figure class="left_image mb-0">
-                    <img src="/assets-u/images/contact_us_left_image.jpg" alt="" class="img-fluid">
-                </figure>
-            </div>
-            <div class="col-lg-6 col-md-12 col-sm-12 col-12 pl-lg-0 pl-auto">
-                <div class="contact_right_content">
-                    <div class="heading position-relative">
-                        <h6 class="text-white">Contact us</h6>
-                        <h2 class="text-white">Get in Touch With Us!</h2>
-                        <figure class="mb-0 position-absolute">
-                            <img src="/assets-u/images/white_line.png" alt="" class="img-fluid">
-                        </figure>
-                    </div>
-                    <form method="POST" action="admin/contact-form">
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Your Name:">
-                        </div>
-                        <div class="form-group">
-                          <input type="email" class="form-control" name="email" id="email" placeholder="Your Email:">
-                        </div>
-                        <div class="form-group">
-                            <input type="number" class="form-control" name="number" id="email" placeholder="Your number:">
-                          </div>
-                        <div class="form-group">
-                            <textarea class="form-control" name="message" id="comments" rows="3" placeholder="Message:"></textarea>
-                        </div>
-                        <button type="submit" class="btn hover-effect">Send Now<i class="fa-thin fa-arrow-right-long"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
     </div>
 </section>

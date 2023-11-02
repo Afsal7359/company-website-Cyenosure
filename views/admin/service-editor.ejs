@@ -1,0 +1,72 @@
+
+<div class="page">
+    <div class="page-main">
+
+        
+
+      
+
+        <!--app-content open-->
+        <div class="app-content main-content mt-0">
+            <div class="side-app">
+
+                <!-- CONTAINER -->
+                <div class="main-container container-fluid">
+
+                        
+                    <!-- PAGE-HEADER -->
+                    <div class="page-header">
+                        <div>
+                            
+                            <h1 class="page-title">Service Content Page</h1>
+                           
+                        </div>
+                        <div class="ms-auto pageheader-btn">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">service </a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Service Content Page</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- PAGE-HEADER END -->
+
+                   
+                   
+
+                   
+   <!-- Row -->
+             
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header border-bottom">
+                <h3 class="card-title"></h3>
+            </div>
+           <% if (servicedata) { %>  
+                <form action="updateproduct-content/<%= servicedata[3]._id%>" method="post">
+                  <div class="card-body">
+                    <textarea id="summernote" cols="30" rows="10" name="content"><%- servicedata[3].content -%></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+             
+                <% } %>
+              
+        </div>
+    </div>
+</div>
+
+<!--End Row-->
+
+       
+                   
+
+                    
+                </div>
+            </div>
+        </div>
+            <!-- CONTAINER CLOSED -->
+     </div>
+
+
+</div>

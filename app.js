@@ -1,68 +1,58 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var expressEjsLayouts = require('express-ejs-layouts');
-var AdminRouter = require('./routes/admin');
-var usersRouter = require('./routes/user');
-var dotenv=require('dotenv');
-const { default: mongoose } = require('mongoose');
-const { error } = require('console');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const expressEjsLayouts = require('express-ejs-layouts');
+const AdminRouter = require('./routes/admin');
+const usersRouter = require('./routes/user');
+const dotenv = require('dotenv');
 const session = require('express-session');
+const mongoose = require('mongoose');
+const Grid = require('gridfs-stream');
+const bodyParser = require('body-parser');
+const app = express();
 
-var app = express();
+dotenv.config();
+app.use(bodyParser.json({ limit: '10mb' }));
+app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 
-dotenv.config()
-// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-
-app.use(expressEjsLayouts)
+app.use(expressEjsLayouts);
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({resave:false,saveUninitialized: true,secret:"key",cookie:{maxAge:500000}}))
-
+app.use(session({ resave: false, saveUninitialized: true, secret: "key", cookie: { maxAge: 500000 } }));
 
 app.use('/admin', AdminRouter);
 app.use('/', usersRouter);
 
-
-
-mongoose.connect(process.env.MONGO_URL).then(()=>{
-  console.log("Database connected");
-  }).catch((error)=>{
-    console.log(`database connection error${error}`);
-  })
-  
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
+// Establish the MongoDB connection first
+mongoose.connect(process.env.MONGO_URL).then(() => {
+  // The MongoDB connection is open, now set up GridFS
+  setupGridFS();
+}).catch((error) => {
+  console.log(`Database connection error: ${error}`);
 });
 
+// Create a GridFS stream
+let gfs;
 
+function setupGridFS() {
+  gfs = Grid(mongoose.connection.db, mongoose.mongo);
 
-
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
+  // Define your GridFS model
+  const GridFSModel = mongoose.model('GridFSModel', new mongoose.Schema({}));
+}
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
 
-
-module.exports = app;
+// Export the GridFS instance for use in other modules if needed
+module.exports = { app, gfs };

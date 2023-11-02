@@ -14,12 +14,7 @@ router.get('/blogdetails/:id',usercontroller.GetDetailedblog);
 router.get('/products', usercontroller.GetProductpage);
 router.get('/productdetails/:id', usercontroller.GetDetailedproduct);
 router.get('/contacts', usercontroller.GetContactpage)
-
-
-
-router.get('/detail', function(req, res, next) {
-  res.render('user/project-detail-page')
-});
+router.get('/servicedetail/:id',usercontroller.GetDetailedService);
 
 
 module.exports = router;

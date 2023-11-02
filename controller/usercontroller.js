@@ -1,3 +1,4 @@
+const Editortool = require("../models/Editor");
 const blogs = require("../models/blogs");
 const clients = require("../models/clients");
 const products = require("../models/products");
@@ -20,8 +21,9 @@ module.exports={
     GetDetailedProject:async(req,res)=>{
         try{
             const {id} = req.params;
+            const editordata =  await Editortool.find()
             const Projectdetails=await projects.findById(id)
-            res.render('user/project-detail-page' ,{Projectdetails})
+            res.render('user/project-detail-page' ,{Projectdetails,editordata})
         }catch(err){
             console.log(err);
         }
@@ -39,20 +41,20 @@ module.exports={
 
     GetServicepage:async(req,res)=>{
         try{
+            const editordata =  await Editortool.find()
            const servicedata = await service.find()
             const clientdatas=await clients.find()
-            res.render('user/services' ,{clientdatas,servicedata})
-            console.log(clientdatas);
+            res.render('user/services' ,{clientdatas,servicedata,editordata})
         }catch(err){
             console.log(err);
         }
     },
     GetProjectpage:async(req,res)=>{
         try{
-          
+            const editordata =  await Editortool.find()
             const clientdatas=await clients.find()
             const projectdata=await projects.find()
-            res.render('user/projects' ,{clientdatas,projectdata})
+            res.render('user/projects' ,{clientdatas,projectdata,editordata})
           
         }catch(err){
             console.log(err);
@@ -60,10 +62,11 @@ module.exports={
     },
     GetBlogpage:async(req,res)=>{
         try{
-           
-           
+          const id = '654339fa4438b27b36da7c46'
+           const editordata = await Editortool.findById(id)
+        
             const blogdata=await blogs.find()
-            res.render('user/blogs' ,{blogdata})
+            res.render('user/blogs' ,{blogdata,editordata})
             
         }catch(err){
             console.log(err);
@@ -72,8 +75,10 @@ module.exports={
     GetDetailedblog:async(req,res)=>{
         try{
             const {id} = req.params;
+
+            const editordata =  await Editortool.find()
             const blogdetails=await blogs.findById(id)
-            res.render('user/blog-detail-page' ,{blogdetails})
+            res.render('user/blog-detail-page' ,{blogdetails,editordata})
         }catch(err){
             console.log(err);
         }
@@ -81,17 +86,17 @@ module.exports={
     GetProductpage:async(req,res)=>{
         try{
            
-           
+            const editordata =  await Editortool.find()
             const productdata=await products.find()
-            res.render('user/products' ,{productdata})
+            res.render('user/products' ,{productdata,editordata})
            
-        }catch(err){
+        }catch(err){                           
             console.log(err);
         }
     },
     GetContactpage:async(req,res)=>{
         try{
-          
+           
             const clientdatas=await clients.find()
             
             res.render('user/contact' ,{clientdatas})
@@ -103,8 +108,20 @@ module.exports={
     GetDetailedproduct:async(req,res)=>{
         try{
             const {id} = req.params;
+            const editordata =  await Editortool.find()
             const productdetail=await products.findById(id)
-            res.render('user/product-detail-page' ,{productdetail})
+            res.render('user/product-detail-page' ,{productdetail,editordata})
+        }catch(err){
+            console.log(err);
+        }
+    },
+    GetDetailedService:async(req,res)=>{
+        try{
+            
+            const {id} = req.params;
+            const editordata =  await Editortool.find()
+            const servicedetail=await service.findById(id)
+            res.render('user/service-detail-page' ,{servicedetail,editordata})
         }catch(err){
             console.log(err);
         }

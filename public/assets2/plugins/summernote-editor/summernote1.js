@@ -2541,7 +2541,7 @@
 								display: "none"
 							}).appendTo(document.body).attr("src", n)
 						})).promise()).then((function(t) {
-							o.beforeCommand(), "function" == typeof e ? e(t) : ("string" == typeof e && t.attr("data-bs-filename", e), t.css("width", Math.min(o.$editable.width(), t.width()))), t.show(), o.getLastRange().insertNode(t[0]), o.setLastRange(wt.createFromNodeAfter(t[0]).select()), o.afterCommand()
+							o.beforeCommand(), "function" == typeof e ? e(t) : ("string" == typeof e && t.attr("data-bs-filename"), t.css("width", Math.min(o.$editable.width(), t.width()))), t.show(), o.getLastRange().insertNode(t[0]), o.setLastRange(wt.createFromNodeAfter(t[0]).select()), o.afterCommand()
 						})).fail((function(t) {
 							o.context.triggerEvent("image.upload.error", t)
 						}))

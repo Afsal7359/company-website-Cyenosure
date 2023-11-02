@@ -29,7 +29,7 @@ body {
 :root {
     --e-global-color-primary: #1c1c1c;
     --e-global-color-secondary: #f6a440;
-    --e-global-color-text: #6d6c6c;
+    --e-global-color-text: #000000;
     --e-global-color-accent: #f6a440;
 	--e-global-color-white: #ffffff;
     --e-global-color-dark-grayish: #a69ea5;
@@ -226,7 +226,8 @@ header{
     color: var(--e-global-color-primary) !important;
 }
 .navbar-expand-lg .drop-down-pages .nav-link {
-    padding-left: 0;
+    padding-left: 0em;
+  
 }
 .navbar-nav .nav-item .dropdown-item:hover{
     color: var(--e-global-color-accent) !important;
@@ -1136,7 +1137,7 @@ header{
     margin: 0 auto;
 }
 .our_staff_section .staff_box{
-    background-color: var(--e-global-color-white);
+    
     box-shadow: 0px 19px 54px 0px rgb(0 0 0 / 1%);
     padding: 20px 20px 25px;
     transition: all 0.3s ease-in-out;
@@ -1157,9 +1158,6 @@ header{
     color: var(--e-global-color-text);
     transition: all 0.3s ease-in-out;
 }
-.our_staff_section .staff_box:hover h5 , .our_staff_section .staff_box:hover p{
-    color: var(--e-global-color-white);
-}
 .our_staff_section .staff_box .image_wrapper .icons ul li {
     padding-bottom: 12px;
 }
@@ -1174,12 +1172,12 @@ header{
 .our_staff_section .staff_box .image_wrapper .icons {
     height: 0;
     margin-left: 0;
-    z-index: 1;
+  
     position: relative;
 }
 .our_staff_section .staff_box .image_wrapper .icons ul li i {
     border-radius: 100%;
-    color: var(--e-global-color-white);
+  
     background-color: var(--e-global-color-secondary);
     font-size: 16px;
     line-height: 38px;
@@ -1496,7 +1494,7 @@ header{
     opacity: 35%;
 }
 .sub-banner-section-outer .banner-section{
-    padding: 142px 0 155px;
+    padding: 250px 0 250px;
 }
 .sub-banner-section-outer .banner-section .banner-section-content h1{
     margin-bottom: 18px;
@@ -2448,3 +2446,36 @@ header{
 .blog-posts {
     padding: 130px 0;
 }
+.navbaritems{
+    font-size: 20px;
+}
+@media screen and (min-width: 768px) {
+    .social-icons,
+    .social-icons1 {
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .social-icons {
+      list-style: none;
+      padding-left: 25px;
+      padding-bottom: 3em;
+    }
+    .social-icons1 {
+      list-style: none;
+      padding-left: 20px
+      
+    }
+  
+    .social-icons li,
+    .social-icons1 li {
+      display: inline-flex;
+    }
+  
+    .social-icons a,
+    .social-icons1 a {
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+    }
+  }

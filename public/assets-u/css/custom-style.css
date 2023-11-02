@@ -341,6 +341,7 @@ a.item-link{margin-top: 20px; display: inline-block}
 	transition: .3s ease;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
+	
 }
 .sidebar .widget .tabs li > a {
 	padding: 10px;

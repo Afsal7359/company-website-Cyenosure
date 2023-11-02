@@ -4,6 +4,7 @@ const adminpanel = require('../controller/adminpanel');
 const upload = require('../util/multer');
 const contact = require('../controller/contact');
 const adminauth = require('../middlewears/Adminauth');
+const Editortool = require('../controller/Editortool');
 var router = express.Router();
 
 
@@ -42,6 +43,16 @@ router.post('/addservice',adminauth.adminauth,upload.single('image'),adminpanel.
 router.post('/editservice/:id',adminauth.adminauth,upload.single('image'),adminpanel.UpdateService);
 router.get('/deleteservice/:id',adminauth.adminauth,adminpanel.DeleteService);
 
+router.get('/product-editor',adminauth.adminauth,Editortool.GetProductEditor);
+router.get('/blog-editor',adminauth.adminauth,Editortool.GetBlogEditor);
+router.get('/project-editor',adminauth.adminauth,Editortool.GetprojectEditor);
+router.get('/service-editor',adminauth.adminauth,Editortool.GetServiceEditor);
+router.get('/blog-detail',adminauth.adminauth,Editortool.GetDetailblog);
+router.get('/service-detail',adminauth.adminauth,Editortool.GetDetailService);
+router.get('/product-detail',adminauth.adminauth,Editortool.GetDetailproduct);
+router.get('/project-detail',adminauth.adminauth,Editortool.GetDetailproject);
 
+
+router.post('/updateproduct-content/:id',adminauth.adminauth,Editortool.PostProductEditor);
 
 module.exports = router;

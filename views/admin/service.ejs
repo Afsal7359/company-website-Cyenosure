@@ -16,12 +16,12 @@
                     <!-- PAGE-HEADER -->
                     <div class="page-header">
                         <div>
-                            <h1 class="page-title">Projects Page</h1>
+                            <h1 class="page-title">service Page</h1>
                         </div>
                         <div class="ms-auto pageheader-btn">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="javascript:void(0);">Projects Page</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Projects</li>
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">service</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">service page</li>
                             </ol>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
     <div class="col-lg-6 col-md-6">
         <div class="card">
             <div class="card-header border-bottom">
-                <h3 class="card-title">Projects Page</h3>
+                <h3 class="card-title">service Page</h3>
             </div>
             <div class="card-body">
                 <p class="text-muted"></p>
@@ -56,7 +56,7 @@
         <div class="col-lg-12">
           <div class="card">
             <div class="card-header border-bottom">
-              <h3 class="card-title">product Page Datatable</h3>
+              <h3 class="card-title">service Page Datatable</h3>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -83,9 +83,10 @@
                             <td>
                           <div class="card-body">
                             <p class="text-muted"></p>
-                            <a class="btn btn-primary" data-bs-target="#modaldemo2_<%= i %>" data-bs-toggle="modal">Edit</a>
-                            <a class="btn btn-danger" data-bs-target="#modaldemo3_<%= i %>" data-bs-toggle="modal">Delete</a>
-                          </div>
+                            <a  class="btn btn-success m-4" href="service/<%= currentdata._id %>">Add/Edit Detail page</a>
+                            <a  class="btn btn-primary m-4" data-bs-target="#modaldemo2_<%=i%>" data-bs-toggle="modal">Edit</a>
+                           <a  class="btn btn-danger" data-bs-target="#modaldemo3_<%=i%>" data-bs-toggle="modal">Delete </a>
+                              </div>
                         </td>
                       </tr>
                     <% } %>

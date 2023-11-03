@@ -39,42 +39,8 @@ module.exports ={
             console.log(err);
         }
     },
-    GetDetailblog:async(req,res)=>{
-        try{
-         
-            const detaildata = await Editortool.find()
-            res.render('admin/blog-detail-page',{layout:'adminlayout',detaildata})
-        }catch(err){
-            console.log(err);
-        }
-    },
-    GetDetailService:async(req,res)=>{
-        try{
-         
-            const detaildata = await Editortool.find()
-            res.render('admin/service-detail-page',{layout:'adminlayout',detaildata})
-        }catch(err){
-            console.log(err);
-        }
-    },
-    GetDetailproduct:async(req,res)=>{
-        try{
-         
-            const detaildata = await Editortool.find()
-            res.render('admin/product-detail-page',{layout:'adminlayout',detaildata})
-        }catch(err){
-            console.log(err);
-        }
-    },
-    GetDetailproject:async(req,res)=>{
-        try{
-         
-            const detaildata = await Editortool.find()
-            res.render('admin/project-detail-page',{layout:'adminlayout',detaildata})
-        }catch(err){
-            console.log(err);
-        }
-    },
+ 
+  
 
 
 

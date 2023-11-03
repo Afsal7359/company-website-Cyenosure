@@ -4,18 +4,19 @@ const projectsSchema = new mongoose.Schema({
   
     title:{
         type:String,
-        require:true,
         trim:true
     },
     description:{
         type:String,
-        require:true,
         trim:true
     },
     image:{
         type:String,
-        required:true,
     },
+    content: {
+        type: String,
+        maxlength: 2000000 
+      },
 });
  
 const projects=mongoose.model(' projects', projectsSchema);

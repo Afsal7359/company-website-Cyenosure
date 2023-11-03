@@ -4,18 +4,19 @@ const serviceSchema = new mongoose.Schema({
   
     title:{
         type:String,
-        require:true,
         trim:true
     },
     description:{
         type:String,
-        require:true,
         trim:true
     },
     image:{
         type:String,
-        require:true,
-    }
+    },
+    content: {
+        type: String,
+        maxlength: 2000000 
+      },
    
 });
  

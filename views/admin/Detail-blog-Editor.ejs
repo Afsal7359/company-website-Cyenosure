@@ -1,0 +1,58 @@
+<div class="page">
+    <div class="page-main">
+
+        <!--app-content open-->
+        <div class="app-content main-content mt-0">
+            <div class="side-app">
+
+                <!-- CONTAINER -->
+                <div class="main-container container-fluid">
+
+                        
+                    <!-- PAGE-HEADER -->
+                    <div class="page-header">
+                        <div>
+                            <h1 class="page-title"> Add Blog Page</h1>
+                        </div>
+                        <div class="ms-auto pageheader-btn">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Blog Page</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- PAGE-HEADER END -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header border-bottom">
+                                    <h3 class="card-title">Add  Blog </h3>
+                                </div>
+                                <%if (data) { %>
+                                <form action="/admin/addblogeditor/<%= data._id %>" method="POST" >
+                                        
+                                      <div class="card-body">
+                                        <textarea id="summernote" cols="30" rows="10" name="content"><%- data.content -%></textarea>
+                                      </div>
+                                      <button type="submit" class="btn btn-primary">Submit</button>
+                                    </form>
+                           <%}else{%>
+                            <form action="/admin/addblogeditor/<%= data._id %>" method="POST" >
+                                        
+                                <div class="card-body">
+                                  <textarea id="summernote" cols="30" rows="10" name="content"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                              </form>
+                              <%}%>
+                                  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- CONTAINER CLOSED -->
+     </div>
+
+</div>

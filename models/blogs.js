@@ -5,28 +5,32 @@ const blogsSchema = new mongoose.Schema({
   
     date:{
         type:String,
-        required:true,
+      
         trim:true
     },
     author:{
         type:String,
-        required:true,
+       
         trim:true
     },
     title:{
         type:String,
-        required:true,
+       
         trim:true
     },
     description:{
         type:String,
-        require:true,
+       
         trim:true
     },
     image:{
         type:String,
-        required:true,
+        
     },
+    content: {
+        type: String,
+        maxlength: 2000000 
+      },
 });
  
 const blogs=mongoose.model(' blogs', blogsSchema);

@@ -21,9 +21,8 @@ module.exports={
     GetDetailedProject:async(req,res)=>{
         try{
             const {id} = req.params;
-            const editordata =  await Editortool.find()
             const Projectdetails=await projects.findById(id)
-            res.render('user/project-detail-page' ,{Projectdetails,editordata})
+            res.render('user/project-detail-page' ,{Projectdetails})
         }catch(err){
             console.log(err);
         }
@@ -62,7 +61,7 @@ module.exports={
     },
     GetBlogpage:async(req,res)=>{
         try{
-          const id = '654339fa4438b27b36da7c46'
+        const {id} = '654339fa4438b27b36da7c46'
            const editordata = await Editortool.findById(id)
         
             const blogdata=await blogs.find()
@@ -75,10 +74,8 @@ module.exports={
     GetDetailedblog:async(req,res)=>{
         try{
             const {id} = req.params;
-
-            const editordata =  await Editortool.find()
             const blogdetails=await blogs.findById(id)
-            res.render('user/blog-detail-page' ,{blogdetails,editordata})
+            res.render('user/blog-detail-page' ,{blogdetails})
         }catch(err){
             console.log(err);
         }
@@ -108,9 +105,8 @@ module.exports={
     GetDetailedproduct:async(req,res)=>{
         try{
             const {id} = req.params;
-            const editordata =  await Editortool.find()
             const productdetail=await products.findById(id)
-            res.render('user/product-detail-page' ,{productdetail,editordata})
+            res.render('user/product-detail-page' ,{productdetail})
         }catch(err){
             console.log(err);
         }
@@ -119,9 +115,8 @@ module.exports={
         try{
             
             const {id} = req.params;
-            const editordata =  await Editortool.find()
             const servicedetail=await service.findById(id)
-            res.render('user/service-detail-page' ,{servicedetail,editordata})
+            res.render('user/service-detail-page' ,{servicedetail})
         }catch(err){
             console.log(err);
         }

@@ -9,7 +9,6 @@ const usersRouter = require('./routes/user');
 const dotenv = require('dotenv');
 const session = require('express-session');
 const mongoose = require('mongoose');
-const Grid = require('gridfs-stream');
 const bodyParser = require('body-parser');
 const app = express();
 
@@ -26,7 +25,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({ resave: false, saveUninitialized: true, secret: "key", cookie: { maxAge: 5000000000 } }));
+
+app.use(session({
+  resave: false,
+  saveUninitialized: true,
+  secret: "key",
+  cookie: {
+    maxAge: 24 * 60 * 60 * 1000, // 1 day in milliseconds
+    secure: false, // In production, set this to true if your app is served over HTTPS
+  }
+}));
 
 app.use('/admin', AdminRouter);
 app.use('/', usersRouter);

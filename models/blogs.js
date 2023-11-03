@@ -29,7 +29,7 @@ const blogsSchema = new mongoose.Schema({
     },
     content: {
         type: String,
-        maxlength: 2000000 
+        maxlength: 20000000 
       },
 });
  
